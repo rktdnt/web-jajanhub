@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilih Metode Pembayaran</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="appbar">
+    Pilih Metode Pembayaran
+  </header>
+
+  <div class="content">
+    <h2>Total Pembayaran</h2>
+    <p id="total-harga">Rp 0</p>
+
+    <div class="card">
+      <button class="btn" onclick="payCash()">CASH</button>
+      <button class="btn" style="margin-top:12px" onclick="payQris()">
+        HUBPAY / QRIS
+      </button>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="home.html">🏠</a>
+    <a href="cart.html">🛒</a>
+    <a href="profile.html">👤</a>
+  </nav>
+
+</div>
+
+<script src="js/cart.js"></script>
+<script>
+  // tampilkan total harga
+  document.getElementById("total-harga").innerText =
+    "Rp " + getTotal().toLocaleString();
+
+  function payCash() {
+    alert("Pembayaran Cash Berhasil");
+    localStorage.removeItem("cart");
+    window.location.href = "home.html";
+  }
+
+  function payQris() {
+    window.location.href = "qris.html";
+  }
+</script>
+
+</body>
+</html>

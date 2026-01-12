@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QRIS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="appbar">
+    QRIS Code
+  </header>
+
+  <div class="content" style="text-align:center">
+
+    <div class="card">
+      <img
+        src="assets/images/qris.jpg"
+        alt="QRIS"
+        style="width:220px; height:auto; margin:0 auto 12px"
+      >
+
+      <p>Scan QR untuk pembayaran</p>
+
+      <button class="btn" onclick="finishPayment()">
+        Saya Sudah Bayar
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function finishPayment() {
+    localStorage.removeItem("cart");
+    alert("Pembayaran Berhasil");
+    window.location.href = "home.html";
+  }
+</script>
+
+</body>
+</html>

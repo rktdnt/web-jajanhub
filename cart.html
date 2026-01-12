@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+  <header class="appbar">Keranjang Saya</header>
+
+  <div class="content" id="cart-container"></div>
+
+  <nav class="bottom-nav">
+    <a href="home.html">🏠</a>
+    <a href="cart.html">🛒</a>
+    <a href="profile.html">👤</a>
+  </nav>
+</div>
+
+<script src="js/cart.js"></script>
+
+<script>
+  function renderCart() {
+    const container = document.getElementById("cart-container");
+    const cart = getCart();
+
+    container.innerHTML = "";
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p>Keranjang masih kosong</p>";
+      return;
+    }
+
+    cart.forEach(item => {
+      container.innerHTML += `
+        <div class="card">
+          <img src="${item.image}" alt="${item.name}">
+          <h3>${item.name}</h3>
+          <p>Rp ${item.price.toLocaleString()}</p>
+
+          <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+            <button onclick="updateQty(${item.id}, ${item.qty - 1})">−</button>
+            <strong>${item.qty}</strong>
+            <button onclick="updateQty(${item.id}, ${item.qty + 1})">+</button>
+          </div>
+
+          <button class="btn" style="background:#dc2626"
+            onclick="removeFromCart(${item.id})">
+            Hapus
+          </button>
+        </div>
+      `;
+    });
+
+    container.innerHTML += `
+      <h3 style="margin-top:20px">
+        Total: Rp ${getTotal().toLocaleString()}
+      </h3>
+
+      <button class="btn" onclick="checkout()">
+        Checkout
+      </button>
+    `;
+  }
+
+  function checkout() {
+    if (getCart().length === 0) {
+      alert("Keranjang kosong");
+      return;
+    }
+    window.location.href = "payment.html";
+  }
+
+  // render pertama kali
+  renderCart();
+</script>
+
+</body>
+</html>

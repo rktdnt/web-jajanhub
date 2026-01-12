@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #D9F0FF;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: #D9F0FF;
+  position: relative;
+}
+
+.appbar {
+  height: 64px;
+  background: #0B3C6D;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  padding: 20px 16px 110px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+p {
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.card {
+  position: relative;
+  background: #F8F4F2;
+  border-radius: 20px;
+  padding: 14px;
+  margin-top: 16px;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.price {
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.add-btn {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #0B3C6D;
+  color: white;
+  font-size: 22px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 430px;
+  height: 64px;
+  background: #0B3C6D;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-nav a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 14px;
+  border: none;
+  background: #3CB371;
+  color: white;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.card .btn {
+  width: 100%;
+}

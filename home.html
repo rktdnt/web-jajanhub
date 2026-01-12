@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JajanHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+  <header class="appbar">JajanHub</header>
+
+  <div class="content">
+    <h2>Kita ke Jajan yuk!</h2>
+    <p>Apa yang ingin kamu makan hari ini?</p>
+
+    <div id="product-list"></div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="home.html">🏠</a>
+    <a href="cart.html">🛒</a>
+    <a href="profile.html">👤</a>
+  </nav>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  const list = document.getElementById("product-list");
+
+  products.forEach(p => {
+    list.innerHTML += `
+      <div class="card">
+        <img src="${p.image}">
+        <h3>${p.name}</h3>
+        <p>⭐ ${p.rating}</p>
+        <p class="price">Rp ${p.price.toLocaleString()}</p>
+        <button class="add-btn"
+          onclick='addToCart(${JSON.stringify(p)})'>+</button>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>
