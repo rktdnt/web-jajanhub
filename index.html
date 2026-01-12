@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JajanHub - Login</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="center">
+<body>
 
-  <h1 class="logo">JajanHub</h1>
-  <p>Create an account</p>
+<div class="app">
 
-  <input class="input" placeholder="Phone number">
-  <button class="btn black" onclick="login()">Continue</button>
+  <header class="appbar">
+    JajanHub
+  </header>
 
-  <script>
-    function login() {
-      localStorage.setItem("login", true);
-      location.href = "home.html";
-    }
-  </script>
+  <div class="content">
+
+    <div class="card">
+      <h2>Create an account</h2>
+      <p>Enter your phone number to sign up</p>
+
+      <input
+        type="text"
+        placeholder="Phone number"
+        class="input"
+      >
+
+      <button class="btn" onclick="goHome()">
+        Continue
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function goHome() {
+    window.location.href = "home.html";
+  }
+</script>
 
 </body>
 </html>
